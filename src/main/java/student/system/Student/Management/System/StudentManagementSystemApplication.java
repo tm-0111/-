@@ -76,29 +76,6 @@ public class StudentManagementSystemApplication {
         .collect(Collectors.toList());
   }
 
-  @GetMapping
-  public List<Students> getAllStudents(
-      @RequestParam(required = false) Integer age,
-      @RequestParam(required = false) String region
-  ) {
-    return studentsList.stream()
-        .filter(student -> {
-          boolean match = true;
-
-          if (age != null) {
-            match &= student.getAge().equals(age);
-            //数字がぴったり同じ学生だけが対象
-          }
-
-          if (region != null && !region.isEmpty()) {
-            match &= student.getRegion().equalsIgnoreCase(region);
-            //大文字小文字を無視して比較
-          }
-          return match;
-        })
-        .collect(Collectors.toList());
-  }
-
   //新規登録
   @PostMapping
   public Students addStudents(@RequestBody Students newStudents) {
