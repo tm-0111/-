@@ -8,6 +8,9 @@ public class Studentscourses {
   private LocalDate startDate;
   private LocalDate endDate;
 
+  public Studentscourses() {
+  }
+
   public Studentscourses(String courseName, LocalDate startDate, LocalDate endDate) {
     this.courseName = courseName;
     this.startDate = startDate;
