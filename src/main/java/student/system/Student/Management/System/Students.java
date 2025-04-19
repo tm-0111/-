@@ -14,6 +14,8 @@ public class Students {
   private String gender;
   private List<Studentscourses> courses;
 
+  public Students() {
+  }
 
   public Students(String fullName, String furigana, String nickname, String email, String region,
       int age, String gender,
